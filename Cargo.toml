@@ -1,0 +1,60 @@
+[package]
+name = "lingzhen-sqlx"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.94"
+description = "基于 SQLx 的 SQL ID 查询扩展"
+repository = "https://github.com/SunnyX6/Lingzhen-sqlx"
+readme = "README.md"
+
+[dependencies]
+sqlx-native = { package = "sqlx", version = "0.9", default-features = false }
+
+[features]
+default = []
+sqlite = ["sqlx-native/sqlite"]
+sqlite-bundled = ["sqlx-native/sqlite-bundled"]
+sqlite-unbundled = ["sqlx-native/sqlite-unbundled"]
+sqlite-deserialize = ["sqlx-native/sqlite-deserialize"]
+sqlite-load-extension = ["sqlx-native/sqlite-load-extension"]
+sqlite-unlock-notify = ["sqlx-native/sqlite-unlock-notify"]
+sqlite-preupdate-hook = ["sqlx-native/sqlite-preupdate-hook"]
+mysql = ["sqlx-native/mysql"]
+mysql-rsa = ["sqlx-native/mysql-rsa"]
+postgres = ["sqlx-native/postgres"]
+any = ["sqlx-native/any"]
+all-databases = ["sqlx-native/all-databases"]
+runtime-tokio = ["sqlx-native/runtime-tokio"]
+runtime-async-std = ["sqlx-native/runtime-async-std"]
+runtime-smol = ["sqlx-native/runtime-smol"]
+runtime-async-global-executor = ["sqlx-native/runtime-async-global-executor"]
+tls-none = ["sqlx-native/tls-none"]
+tls-native-tls = ["sqlx-native/tls-native-tls"]
+tls-rustls = ["sqlx-native/tls-rustls"]
+tls-rustls-ring = ["sqlx-native/tls-rustls-ring"]
+tls-rustls-ring-native-roots = ["sqlx-native/tls-rustls-ring-native-roots"]
+tls-rustls-ring-webpki = ["sqlx-native/tls-rustls-ring-webpki"]
+tls-rustls-aws-lc-rs = ["sqlx-native/tls-rustls-aws-lc-rs"]
+derive = ["sqlx-native/derive"]
+macros = ["sqlx-native/macros"]
+migrate = ["sqlx-native/migrate"]
+json = ["sqlx-native/json"]
+chrono = ["sqlx-native/chrono"]
+time = ["sqlx-native/time"]
+uuid = ["sqlx-native/uuid"]
+bigdecimal = ["sqlx-native/bigdecimal"]
+rust_decimal = ["sqlx-native/rust_decimal"]
+bit-vec = ["sqlx-native/bit-vec"]
+bstr = ["sqlx-native/bstr"]
+ipnet = ["sqlx-native/ipnet"]
+ipnetwork = ["sqlx-native/ipnetwork"]
+mac_address = ["sqlx-native/mac_address"]
+regexp = ["sqlx-native/regexp"]
+sqlx-toml = ["sqlx-native/sqlx-toml"]
+
+[lints.rust]
+unsafe_code = "forbid"
+unused_must_use = "deny"
+
+[lints.clippy]
+all = "warn"
